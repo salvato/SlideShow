@@ -10,7 +10,7 @@
                 </method>
                 <method name= "stopSlideShow"/>
                 <method name= "hide"/>
-                <method name= "showFullScreen"/>
+                <method name= "exit"/>
                 <method name= "getCurrentSlide">
                     <arg name= "iCurrentSlide" type="i" direction="out"/>
                 </method>

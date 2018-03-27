@@ -148,7 +148,6 @@ SlideWindow::updateSlideList() {
 
 void
 SlideWindow::startSlideShow(int iStartSlide) {
-    printf("\n startSlideShow()\n");
     iCurrentSlide = iStartSlide;
     initEgl();
     updateSlideList();
@@ -171,14 +170,13 @@ SlideWindow::startSlideShow(int iStartSlide) {
 
 
 void
-SlideWindow::showFullScreen() {
-    printf("\nshowFullScreen()\n");
+SlideWindow::exitShow() {
+    exit(EXIT_SUCCESS);
 }
 
 
 void
 SlideWindow::stopSlideShow() {
-    printf("\n stopSlideShow()\n");
     timerSteady.stop();
     timerUpdate.stop();
     deinitEgl();
@@ -190,7 +188,6 @@ SlideWindow::stopSlideShow() {
 
 void
 SlideWindow::hide() {
-    printf("\n hide()\n");
     timerSteady.stop();
     timerUpdate.stop();
     deinitEgl();

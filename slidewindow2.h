@@ -36,7 +36,7 @@ public Q_SLOTS:
     void setSlideDir(QString sDir);
     void startSlideShow(int iStartSlide);
     void stopSlideShow();
-    void showFullScreen();
+    void exitShow();
     void hide();
     int  getCurrentSlide();
 
