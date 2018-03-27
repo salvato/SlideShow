@@ -34,11 +34,9 @@ public:
 
 public Q_SLOTS:
     void setSlideDir(QString sDir);
-    void startSlideShow(int iStartSlide);
+    void startSlideShow();
     void stopSlideShow();
     void exitShow();
-    void hide();
-    int  getCurrentSlide();
 
 Q_SIGNALS:
     void crashed();

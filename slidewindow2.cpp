@@ -69,12 +69,6 @@ SlideWindow::~SlideWindow() {
 }
 
 
-int
-SlideWindow::getCurrentSlide() {
-    return iCurrentSlide;
-}
-
-
 void
 SlideWindow::deinitEgl() {
     if(!bEglInitialized)
@@ -147,8 +141,7 @@ SlideWindow::updateSlideList() {
 
 
 void
-SlideWindow::startSlideShow(int iStartSlide) {
-    iCurrentSlide = iStartSlide;
+SlideWindow::startSlideShow() {
     initEgl();
     updateSlideList();
     if(bSlidesPresent) {
@@ -182,18 +175,6 @@ SlideWindow::stopSlideShow() {
     deinitEgl();
     releaseInputDevices();
     bRunning = false;
-    bSlidesPresent = false;
-}
-
-
-void
-SlideWindow::hide() {
-    timerSteady.stop();
-    timerUpdate.stop();
-    deinitEgl();
-    releaseInputDevices();
-    bRunning = false;
-    bSlidesPresent = false;
 }
 
 

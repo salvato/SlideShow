@@ -31,15 +31,13 @@ MyApp::MyApp(int argc, char *argv[])
 
     sSlideDir = QDir::homePath()+QString("/slides");
     iCurrentSlide = 0;
+    autoStart = false;
     int c;
-    while ((c = getopt(argc, argv, "d:s:g")) != -1) {
+    while ((c = getopt(argc, argv, "d:g")) != -1) {
         switch (c)
         {
             case 'd':
                 sSlideDir = QString(optarg);
-                break;
-            case 's':
-                iCurrentSlide = QString(optarg).toInt();
                 break;
             case 'g':
                 autoStart = true;
@@ -57,7 +55,7 @@ MyApp::exec() {
         return QCoreApplication::exec();
     if(QDir(sSlideDir).exists()) {
         pSlideWindow->setSlideDir(sSlideDir);
-        pSlideWindow->startSlideShow(iCurrentSlide);
+        pSlideWindow->startSlideShow();
         return QCoreApplication::exec();
     }
     else {

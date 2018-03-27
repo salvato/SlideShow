@@ -9,11 +9,7 @@
                     <arg name= "iStartSlide" type="i" direction="in"/>
                 </method>
                 <method name= "stopSlideShow"/>
-                <method name= "hide"/>
                 <method name= "exit"/>
-                <method name= "getCurrentSlide">
-                    <arg name= "iCurrentSlide" type="i" direction="out"/>
-                </method>
                 <signal name= "crashed"/>
         </interface>
 </node>
