@@ -7,7 +7,7 @@
                 </method>
                 <method name= "startSlideShow"/>
                 <method name= "stopSlideShow"/>
-                <method name= "exit"/>
+                <method name= "exitShow"/>
                 <signal name= "crashed"/>
         </interface>
 </node>
