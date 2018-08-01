@@ -26,9 +26,16 @@ MyApp::MyApp(int argc, char *argv[])
     pSlideWindow = new SlideWindow();
     new SlideShowInterfaceAdaptor(pSlideWindow);
     QDBusConnection connection = QDBusConnection::sessionBus();  // Bus
-    connection.registerObject("/SlideShow", pSlideWindow);       // Path
-    connection.registerService("org.salvato.gabriele.slideshow");// Service name
-
+    if(!connection.registerObject("/SlideShow", pSlideWindow)) { // Path
+        qCritical() << Q_FUNC_INFO
+                    << "connection.registerObject() Failed !";
+        exit(EXIT_FAILURE);
+    }
+    if(!connection.registerService("org.salvato.gabriele.slideshow")) {// Service name
+        qCritical() << Q_FUNC_INFO
+                    << "connection.registerService() Failed !";
+        exit(EXIT_FAILURE);
+    }
     sSlideDir = QDir::homePath()+QString("/slides");
     iCurrentSlide = 0;
     autoStart = false;
